@@ -13,7 +13,8 @@ torch.backends.cudnn.benchmark = False
 vis = False
 save_output = True
 
-model_path = './final_models/mcnn_shtechC_30.h5'
+model_path = './final_models/mcnn_gigadata_168.h5'
+# model_path = './final_models/mcnn_shtechC_30.h5'
 
 output_dir = './output/'
 model_name = os.path.basename(model_path).split('.')[0]
@@ -34,9 +35,9 @@ net.eval()
 mae = 0.0
 mse = 0.0
 
-input_video_name = '.\\data\\render_sharpen.mp4'
+input_video_name = '.\\data\\render.avi'
 cap = cv2.VideoCapture(input_video_name)
-out = cv2.VideoWriter('.\\data\\render_sharpen_density.avi', cv2.VideoWriter_fourcc('D','I','V','X'), 10.0, (1920, 1080), True)
+out = cv2.VideoWriter('.\\data\\render_density.avi', cv2.VideoWriter_fourcc('D','I','V','X'), 10.0, (1920, 1080), True)
 ind = 0
 
 while (True):
